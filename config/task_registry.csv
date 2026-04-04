@@ -1,0 +1,7 @@
+﻿Name,Command,ConfigPath,Args
+"aaa","sss","",""
+"test","ros2 run test test_node","",""
+"qq","aaa","",""
+"qqq","qqq","",""
+"rfid_reader","/home/wata/workspace/install/rfid_reader_proc/lib/rfid_reader_proc/rfid_reader","/home/wata/workspace/install/rfid_reader_proc/share/rfid_reader_proc/config/config.yaml",""
+"rfid_driver","ros2 run rfid_driver rfid_driver_node"," -l rfid_driver --ros-args -r __node:=rfid_driver_node_1 --params-file /home/wata/workspace/install/rfid_driver/share/rfid_driver/config/rfid_driver_1.yaml",""

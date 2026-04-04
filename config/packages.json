@@ -1,0 +1,16 @@
+[
+  {
+    "Name": "sensors",
+    "TaskNames": [
+      "rfid_reader",
+      "rfid_driver"
+    ]
+  },
+  {
+    "Name": "all",
+    "TaskNames": [
+      "qqq",
+      "aaa"
+    ]
+  }
+]

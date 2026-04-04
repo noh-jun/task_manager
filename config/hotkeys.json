@@ -1,0 +1,15 @@
+{
+  "KeyMap": {
+    "MoveUp": "UpArrow",
+    "MoveDown": "DownArrow",
+    "Select": "Enter",
+    "Back": "Enter",
+    "Exit": "D",
+    "TaskAdd": "A",
+    "TaskEdit": "E",
+    "TaskDelete": "D",
+    "PackageAdd": "A",
+    "PackageEdit": "E",
+    "PackageDelete": "D"
+  }
+}
