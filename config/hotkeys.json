@@ -1,15 +1,104 @@
 {
   "KeyMap": {
-    "MoveUp": "UpArrow",
-    "MoveDown": "DownArrow",
-    "Select": "Enter",
-    "Back": "Enter",
-    "Exit": "D",
-    "TaskAdd": "A",
-    "TaskEdit": "E",
-    "TaskDelete": "D",
-    "PackageAdd": "A",
-    "PackageEdit": "E",
-    "PackageDelete": "D"
+    "MoveUp": {
+      "Key": 38,
+      "KeyChar": "",
+      "Modifiers": 0
+    },
+    "MoveDown": {
+      "Key": 40,
+      "KeyChar": "",
+      "Modifiers": 0
+    },
+    "Select": {
+      "Key": 13,
+      "KeyChar": "",
+      "Modifiers": 0
+    },
+    "Back": {
+      "Key": 13,
+      "KeyChar": "",
+      "Modifiers": 1
+    },
+    "Exit": {
+      "Key": 68,
+      "KeyChar": "",
+      "Modifiers": 4
+    },
+    "TaskAdd": {
+      "Key": 65,
+      "KeyChar": "a",
+      "Modifiers": 0
+    },
+    "TaskEdit": {
+      "Key": 69,
+      "KeyChar": "e",
+      "Modifiers": 0
+    },
+    "TaskDelete": {
+      "Key": 68,
+      "KeyChar": "d",
+      "Modifiers": 0
+    },
+    "TaskCopy": {
+      "Key": 67,
+      "KeyChar": "c",
+      "Modifiers": 0
+    },
+    "ArgAdd": {
+      "Key": 65,
+      "KeyChar": "a",
+      "Modifiers": 0
+    },
+    "ArgDelete": {
+      "Key": 68,
+      "KeyChar": "d",
+      "Modifiers": 0
+    },
+    "PackageAdd": {
+      "Key": 65,
+      "KeyChar": "a",
+      "Modifiers": 0
+    },
+    "PackageEdit": {
+      "Key": 69,
+      "KeyChar": "e",
+      "Modifiers": 0
+    },
+    "PackageDelete": {
+      "Key": 68,
+      "KeyChar": "d",
+      "Modifiers": 0
+    },
+    "PackageFavorite": {
+      "Key": 70,
+      "KeyChar": "f",
+      "Modifiers": 0
+    },
+    "LogReload": {
+      "Key": 82,
+      "KeyChar": "\u0012",
+      "Modifiers": 4
+    },
+    "LogPageUp": {
+      "Key": 0,
+      "KeyChar": "[",
+      "Modifiers": 0
+    },
+    "LogPageDown": {
+      "Key": 0,
+      "KeyChar": "]",
+      "Modifiers": 0
+    },
+    "LogHome": {
+      "Key": 109,
+      "KeyChar": "-",
+      "Modifiers": 0
+    },
+    "LogEnd": {
+      "Key": 107,
+      "KeyChar": "\u002B",
+      "Modifiers": 0
+    }
   }
 }

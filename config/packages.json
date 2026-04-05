@@ -2,15 +2,65 @@
   {
     "Name": "sensors",
     "TaskNames": [
-      "rfid_reader",
-      "rfid_driver"
-    ]
+      "rfid_driver",
+      "rfid_reader(simul)"
+    ],
+    "IsFavorite": false
   },
   {
-    "Name": "all",
+    "Name": "alls",
+    "TaskNames": [],
+    "IsFavorite": false
+  },
+  {
+    "Name": "rfid",
     "TaskNames": [
-      "qqq",
-      "aaa"
-    ]
+      "rfid_driver",
+      "rfid_reader(real)",
+      "rfid_controller"
+    ],
+    "IsFavorite": false
+  },
+  {
+    "Name": "distance_reach",
+    "TaskNames": [
+      "distance_driver_forward(real)",
+      "distance_controller_forward"
+    ],
+    "IsFavorite": false
+  },
+  {
+    "Name": "distance_height",
+    "TaskNames": [
+      "distance_driver_height(real)",
+      "distance_controller_height"
+    ],
+    "IsFavorite": false
+  },
+  {
+    "Name": "distance_all",
+    "TaskNames": [
+      "distance_driver_forward(real)",
+      "distance_driver_height(real)",
+      "distance_controller_forward",
+      "distance_controller_height"
+    ],
+    "IsFavorite": false
+  },
+  {
+    "Name": "loadcell",
+    "TaskNames": [
+      "loadcell_driver(real)",
+      "loadcell_controller"
+    ],
+    "IsFavorite": false
+  },
+  {
+    "Name": "volume",
+    "TaskNames": [
+      "volume_driver",
+      "volume_controller"
+    ],
+    "IsFavorite": false
   }
 ]
