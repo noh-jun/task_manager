@@ -20,4 +20,6 @@ public enum ViewId
     PackageList,
     PackageDetails,
     PackageEditor,
+    Settings,
+    DirectoryPicker,
 }

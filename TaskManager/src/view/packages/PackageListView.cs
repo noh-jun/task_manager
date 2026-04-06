@@ -137,18 +137,6 @@ public sealed class PackageListView : IView
             Console.Write($"  {selected.Name}");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine($"  ·  {selected.TaskNames.Count} task(s)");
-            if (selected.TaskNames.Count > 0)
-            {
-                Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.WriteLine($"  {string.Join(", ", selected.TaskNames)}");
-            }
-            var missing = GetMissingTaskNames(selected);
-            if (missing.Count > 0)
-            {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine($"  ⚠ Missing: {string.Join(", ", missing)}");
-                Console.ResetColor();
-            }
         }
         else
         {

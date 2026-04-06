@@ -111,22 +111,7 @@ public sealed class TaskListView : IView
         {
             TaskItem selected = _taskStore.GetAt(_selectedIndex);
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write($"  {selected.Name}");
-            if (!string.IsNullOrEmpty(selected.Command))
-            {
-                Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.Write($"  ·  ");
-                Console.ForegroundColor = ConsoleColor.Gray;
-                Console.Write(selected.Command);
-                if (!string.IsNullOrEmpty(selected.Args))
-                    Console.Write($"  {selected.Args}");
-            }
-            Console.WriteLine();
-            if (!string.IsNullOrEmpty(selected.ConfigPath))
-            {
-                Console.ForegroundColor = ConsoleColor.DarkGray;
-                Console.WriteLine($"  {selected.ConfigPath}");
-            }
+            Console.WriteLine($"  {selected.Name}");
         }
         else
         {

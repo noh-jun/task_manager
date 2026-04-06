@@ -2,11 +2,13 @@ using System;
 using TaskManager.Infra.Csv;
 using TaskManager.Infra.HotKeys;
 using TaskManager.Infra.Json;
+using TaskManager.Infra.Settings;
 using TaskManager.Model;
 using TaskManager.View;
 using TaskManager.View.Options;
 using TaskManager.View.Packages;
 using TaskManager.View.Run;
+using TaskManager.View.Settings;
 using TaskManager.View.Tasks;
 
 namespace TaskManager.Core.Navigation;
@@ -22,16 +24,22 @@ public sealed class ViewFactory : IViewFactory
     private readonly JsonPackageStore  _jsonPackageStore;
     private readonly TaskPackageStore  _packageStore;
     private readonly PackageEditSession _packageEditSession;
-    private readonly PackageRunStore   _packageRunStore;
-    private readonly LogViewState      _logViewState;
-    private readonly ArgsEditSession   _argsEditSession;
+    private readonly PackageRunStore    _packageRunStore;
+    private readonly LogViewState       _logViewState;
+    private readonly ArgsEditSession    _argsEditSession;
+    private readonly AppSettings            _appSettings;
+    private readonly AppSettingsStore       _appSettingsStore;
+    private readonly DirectoryPickerSession _directoryPickerSession;
 
-    public ViewFactory(HotKeyConfig hotKeyConfig, HotKeyConfigStore hotKeyConfigStore, CsvTaskStore csvTaskStore, JsonPackageStore jsonPackageStore)
+    public ViewFactory(HotKeyConfig hotKeyConfig, HotKeyConfigStore hotKeyConfigStore, CsvTaskStore csvTaskStore, JsonPackageStore jsonPackageStore, AppSettings appSettings, AppSettingsStore appSettingsStore)
     {
         _hotKeyConfig      = hotKeyConfig      ?? throw new ArgumentNullException(nameof(hotKeyConfig));
         _hotKeyConfigStore = hotKeyConfigStore ?? throw new ArgumentNullException(nameof(hotKeyConfigStore));
         _csvTaskStore      = csvTaskStore      ?? throw new ArgumentNullException(nameof(csvTaskStore));
         _jsonPackageStore  = jsonPackageStore  ?? throw new ArgumentNullException(nameof(jsonPackageStore));
+        _appSettings       = appSettings       ?? throw new ArgumentNullException(nameof(appSettings));
+        _appSettingsStore  = appSettingsStore  ?? throw new ArgumentNullException(nameof(appSettingsStore));
+        _directoryPickerSession = new DirectoryPickerSession();
         _hotKeyCaptureSession = new HotKeyCaptureSession();
         _taskStore           = new TaskStore();
         _taskEditSession     = new TaskEditSession();
@@ -68,6 +76,9 @@ public sealed class ViewFactory : IViewFactory
             ViewId.PackageList    => new PackageListView(viewNavigator, _hotKeyConfig, _taskStore, _packageStore, _packageEditSession, _jsonPackageStore),
             ViewId.PackageDetails => new PackageDetailsView(viewNavigator, _taskStore, _packageStore, _packageEditSession),
             ViewId.PackageEditor  => new PackageEditorView(viewNavigator, _taskStore, _packageStore, _packageEditSession, _jsonPackageStore),
+
+            ViewId.Settings         => new SettingsView(viewNavigator, _hotKeyConfig, _appSettings, _appSettingsStore, _directoryPickerSession),
+            ViewId.DirectoryPicker  => new DirectoryPickerView(viewNavigator, _appSettings, _appSettingsStore, _directoryPickerSession),
 
             _ => throw new ArgumentOutOfRangeException(nameof(viewId), viewId, "Unsupported view id."),
         };
